@@ -13,12 +13,6 @@ Streamlit tabanlı bu Python uygulaması, kişisel harcamalarınızı kategori b
 - 🔄 JSON veri içe / dışa aktarma
 - 🖥️ Kullanıcı dostu arayüz (Streamlit)
 
----
-
-## 🖼️ Ekran Görüntüsü
-
-> Örnek görselleri ekleyebilirsin:  
-> `assets/ekran1.png`, `assets/ekran2.png`
 
 ---
 
