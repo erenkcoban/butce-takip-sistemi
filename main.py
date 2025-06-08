@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from src.kategori import Kategori
 from src.harcama import Harcama
 from utils import veri_yukle, veri_kaydet, dictten_harcama
+# versiyon 1.1
 
 st.set_page_config(page_title="Bütçe Takip Sistemi", layout="wide")
 
