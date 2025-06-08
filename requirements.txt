@@ -1,0 +1,4 @@
+📊 Kullanılan Kütüphaneler
+ streamlit
+ pandas
+ matplotlib
