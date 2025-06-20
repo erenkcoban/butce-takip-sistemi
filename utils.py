@@ -1,7 +1,7 @@
-import json
-from datetime import datetime
 from src.kategori import Kategori
-from src.harcama import Harcama
+from src.harcama import Harcama, OnlineHarcama
+from datetime import datetime
+import json
 
 def veri_yukle(dosya="data.json"):
     try:
@@ -15,9 +15,9 @@ def veri_kaydet(veri, dosya="data.json"):
         json.dump(veri, f, ensure_ascii=False, indent=2)
 
 def dictten_harcama(obj):
-    return Harcama(
-        aciklama=obj["aciklama"],
-        tutar=obj["tutar"],
-        kategori=Kategori(obj["kategori"]),
-        tarih=datetime.strptime(obj["tarih"], "%Y-%m-%d")
-    )
+    kategori = Kategori(obj["kategori"])
+    tarih = datetime.strptime(obj["tarih"], "%Y-%m-%d")
+    if "odeme_yontemi" in obj:
+        return OnlineHarcama(obj["aciklama"], obj["tutar"], kategori, obj["odeme_yontemi"], tarih)
+    else:
+        return Harcama(obj["aciklama"], obj["tutar"], kategori, tarih)

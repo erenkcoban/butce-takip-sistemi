@@ -17,3 +17,17 @@ class Harcama:
 
     def __str__(self):
         return f"{self.aciklama} - {self.tutar} TL - {self.kategori} - {self.tarih.strftime('%Y-%m-%d')}"
+
+
+class OnlineHarcama(Harcama):
+    def __init__(self, aciklama, tutar, kategori, odeme_yontemi, tarih=None):
+        super().__init__(aciklama, tutar, kategori, tarih)
+        self.odeme_yontemi = odeme_yontemi
+
+    def to_dict(self):
+        data = super().to_dict()
+        data["odeme_yontemi"] = self.odeme_yontemi
+        return data
+
+    def __str__(self):
+        return f"{super().__str__()} - Ödeme: {self.odeme_yontemi}"
